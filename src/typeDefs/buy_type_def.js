@@ -14,11 +14,11 @@ const buyTypeDefs = gql`
     }
 
     extend type Query {
-        buyByProductId(productId: String!): [Buy]
+        buyByProductId(userId: String!, productId: String!): [Buy]
     }
     
     type Mutation {
-        createBuy(buy: BuyInput!): Buy
+        createBuy(userId: String!, buy: BuyInput!): Buy
     }
 `;
 

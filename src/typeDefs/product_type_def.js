@@ -8,7 +8,7 @@ const productTypeDefs = gql`
     }
     
     type Query {
-        quantityByProductId(productId: String!): Product
+        quantityByProductId(userId: String!, productId: String!): Product
     }
 `;
 

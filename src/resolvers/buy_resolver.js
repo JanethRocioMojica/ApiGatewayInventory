@@ -1,6 +1,6 @@
 const buyResolver = {
     Query: {
-        buyByProductId: (_, { productId }, { dataSources, userIdToken }) => {
+        buyByProductId: (_, {userId , productId }, { dataSources, userIdToken }) => {
             if (userId == userIdToken)
                 return dataSources.inventoryAPI.buyByProductId(productId)
             else
@@ -8,8 +8,8 @@ const buyResolver = {
         }
     },
     Mutation: {
-        createBuy: (_, { buy }, { dataSources, userIdToken }) => {
-            if (transaction.userIdOrigin == userIdToken)
+        createBuy: (_, {userId ,buy }, { dataSources, userIdToken }) => {
+            if (userId == userIdToken)
                 return dataSources.inventoryAPI.createBuy(buy)
             else
                 return null
