@@ -9,7 +9,7 @@ class InventoryAPI extends RESTDataSource {
     }
 
     async quantityByProductId(productId) {
-        return await this.get(`/products/${produtId}`);
+        return await this.get(`/products/${productId}`);
     }
 
     async createBuy(buy) {
